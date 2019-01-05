@@ -9,5 +9,6 @@ target 'Tuichev' do
 
   pod 'Alamofire'
   pod 'SDWebImage'
+  pod 'ReachabilitySwift'
 
 end
