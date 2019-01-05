@@ -12,15 +12,17 @@ protocol MainPresenterProtocol {
     init(view: MainViewControllerProtocol)
     func getCellCount() -> Int
     func configurateCell(_ cell: EventTableViewCellProtocol, index: Int)
+    func cellSelected(index: Int)
 }
 
-class MainPresenter: MainPresenterProtocol {
+class MainPresenter: BasePresenter, MainPresenterProtocol {
     
     weak var view: MainViewControllerProtocol?
     
     var events: [Event] = []
     
     required init(view: MainViewControllerProtocol) {
+        super.init()
         self.view = view
         
         getEvents()
@@ -30,15 +32,12 @@ class MainPresenter: MainPresenterProtocol {
         
         let item = self.events[index]
         let startDate = DateFormat.shared.forrmatedStringDate(str: item.date ?? "")
-
-        //bad way for logo, but i didn't find another url except 'proof'
         let nameOfFirstCoin = item.coins?.first?.id ?? ""
-        let logoUrl = "https://d235dzzkn2ryki.cloudfront.net/\(nameOfFirstCoin)_normal.png"
-        
+   
         cell.display(title: item.title)
         cell.display(percentage: item.percentage)
         cell.display(description: item.description)
-        cell.display(logo: logoUrl)
+        cell.display(logo: getImageUrl(nameOfFirstCoin))
         cell.display(coinName: getCoinsName(item.coins))
         cell.display(date: startDate)
     }
@@ -47,12 +46,8 @@ class MainPresenter: MainPresenterProtocol {
         return events.count
     }
     
-    fileprivate func getCoinsName(_ coins: [Coin]?) -> String {
-        
-        var labelText: [String] = []
-        coins?.forEach( { labelText.append($0.name ?? "") } )
-      
-        return labelText.joined(separator:",")
+    func cellSelected(index: Int) {        
+        self.view?.showDetailVC(self.events[index])
     }
     
     func getEvents() {

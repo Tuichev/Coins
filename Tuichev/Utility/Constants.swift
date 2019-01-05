@@ -11,7 +11,7 @@ import Foundation
 struct StringValue {
     
     static let kMainVCTitle = "Main"
-    static let kDescriptionVCTitle = "Description"
+    static let kDetailVCTitle = "Detail"
     static let kErrorAlertTitle = "Error"
     static let kGrantType = "client_credentials"
     static let kClientId = "1435_5ec1ig9vn748o4cks0kscw4sg8ckw0ccsw0wkgsw4s0o0c4s80"

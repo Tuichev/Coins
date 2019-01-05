@@ -12,6 +12,7 @@ protocol MainViewControllerProtocol: class {
     func showErrAlert(msg: String)
     func blockScreenViewStart(flag: Bool)
     func reloadTableView()
+    func showDetailVC(_ event: Event?)
 }
 
 class MainViewController: UIViewController {
@@ -59,7 +60,7 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        presenter.cellSelected(index: indexPath.item)
     }
     
 }
@@ -69,6 +70,19 @@ extension MainViewController: MainViewControllerProtocol {
     func reloadTableView() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
+        }
+    }
+    
+    func showDetailVC(_ event: Event?) {
+        DispatchQueue.main.async {
+            
+            let detailVC = DetailViewController.instance(.main)
+            let detailPresenter = DetailPresenter(view: detailVC)
+            
+            detailPresenter.event = event
+            detailVC.presenter = detailPresenter
+            
+            self.navigationController?.pushViewController(detailVC, animated: true)
         }
     }
     

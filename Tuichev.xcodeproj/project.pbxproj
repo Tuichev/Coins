@@ -23,6 +23,9 @@
 		2D698C0C21E0B15000CA0C3D /* BlockUILoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D698C0B21E0B15000CA0C3D /* BlockUILoadingView.swift */; };
 		2D698C0E21E0B17200CA0C3D /* BlockUILoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D698C0D21E0B17200CA0C3D /* BlockUILoadingView.xib */; };
 		2D698C1021E0C39B00CA0C3D /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D698C0F21E0C39B00CA0C3D /* DateFormatter.swift */; };
+		2D698C1221E0CD3300CA0C3D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D698C1121E0CD3300CA0C3D /* DetailViewController.swift */; };
+		2D698C1421E0CD5C00CA0C3D /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D698C1321E0CD5C00CA0C3D /* DetailPresenter.swift */; };
+		2D698C1621E0CE8E00CA0C3D /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D698C1521E0CE8E00CA0C3D /* BasePresenter.swift */; };
 		2DD7F06F21DFC5330086333F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7F06E21DFC5330086333F /* AppDelegate.swift */; };
 		2DD7F07121DFC5330086333F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD7F07021DFC5330086333F /* MainViewController.swift */; };
 		2DD7F07421DFC5330086333F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD7F07221DFC5330086333F /* Main.storyboard */; };
@@ -48,6 +51,9 @@
 		2D698C0B21E0B15000CA0C3D /* BlockUILoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockUILoadingView.swift; sourceTree = "<group>"; };
 		2D698C0D21E0B17200CA0C3D /* BlockUILoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlockUILoadingView.xib; sourceTree = "<group>"; };
 		2D698C0F21E0C39B00CA0C3D /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		2D698C1121E0CD3300CA0C3D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		2D698C1321E0CD5C00CA0C3D /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		2D698C1521E0CE8E00CA0C3D /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		2DD7F06B21DFC5330086333F /* Tuichev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tuichev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD7F06E21DFC5330086333F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD7F07021DFC5330086333F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				2DD7F07021DFC5330086333F /* MainViewController.swift */,
+				2D698C1121E0CD3300CA0C3D /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -83,7 +90,9 @@
 		2D26677321DFCC3E0011B662 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				2D698C1521E0CE8E00CA0C3D /* BasePresenter.swift */,
 				2D26678321DFD3450011B662 /* MainPresenter.swift */,
+				2D698C1321E0CD5C00CA0C3D /* DetailPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -343,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D698C1021E0C39B00CA0C3D /* DateFormatter.swift in Sources */,
+				2D698C1221E0CD3300CA0C3D /* DetailViewController.swift in Sources */,
 				2D26677C21DFD2230011B662 /* RestClient.swift in Sources */,
 				2D26677E21DFD2B50011B662 /* ApiSettings.swift in Sources */,
 				2D26677A21DFD1980011B662 /* HTTPService.swift in Sources */,
@@ -350,8 +360,10 @@
 				2D26678A21DFE19B0011B662 /* Event.swift in Sources */,
 				2D26678021DFD2D00011B662 /* ApiStructs.swift in Sources */,
 				2D698C0721E0A2C500CA0C3D /* AppManager.swift in Sources */,
+				2D698C1621E0CE8E00CA0C3D /* BasePresenter.swift in Sources */,
 				2DD7F07121DFC5330086333F /* MainViewController.swift in Sources */,
 				2D26678721DFD35D0011B662 /* EventTableViewCell.swift in Sources */,
+				2D698C1421E0CD5C00CA0C3D /* DetailPresenter.swift in Sources */,
 				2D26678C21DFE3D60011B662 /* InternetService.swift in Sources */,
 				2DD7F06F21DFC5330086333F /* AppDelegate.swift in Sources */,
 				2D698C0C21E0B15000CA0C3D /* BlockUILoadingView.swift in Sources */,
