@@ -23,8 +23,8 @@ class DetailPresenter: BasePresenter, DetailPresenterProtocol {
     var event: Event?
     
     required init(view: DetailViewControllerProtocol) {
+        super.init()
         self.view = view
-        
     }
     
     func getImageUrl() -> URL? {
