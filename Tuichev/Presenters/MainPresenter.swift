@@ -25,7 +25,9 @@ class MainPresenter: BasePresenter, MainPresenterProtocol {
         super.init()
         self.view = view
         
-        getEvents()
+       AppManager.shared.checkToken() { [weak self] in
+           self?.getEvents()
+        }
     }
     
     func configurateCell(_ cell: EventTableViewCellProtocol, index: Int) {
