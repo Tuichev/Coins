@@ -13,11 +13,17 @@ class AppManager: NSObject {
     static let shared = AppManager()
     
     //TODO: add checking for token expiration
-    func checkToken() {
+     func checkToken(handler: @escaping (() -> Void)) {
         
         if ApiSettings.shared.token == nil {
             
-            RestClient.shared.getToken(resp: {[weak self] _,_ in })          
+            RestClient.shared.getToken(resp: { [weak self] resp, error in
+                
+                if error == nil {
+                    handler()
+                }
+                
+            })
         }
     }
     
